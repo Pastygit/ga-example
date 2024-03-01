@@ -1,6 +1,6 @@
 param location string = 'westus3'
 
-param namePrefix string = 'itosx'
+param namePrefix string = 'itosxpasty'
 param appPlanId string
 
 param dockerImage string = 'ubuntu/nginx'
