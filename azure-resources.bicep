@@ -1,5 +1,5 @@
 param location string = 'westus3'
-param storageName string = 'gapstorage'
+param storageName string = 'pastystorage'
 
 
 resource storageaccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
