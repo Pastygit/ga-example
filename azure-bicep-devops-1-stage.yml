@@ -1,6 +1,6 @@
 name: Deploy Bicep files
 
-trigger: none
+trigger:
 - main
 
 variables:
@@ -31,6 +31,15 @@ steps:
   displayName: Deploy Bicep To Azure
   inputs:
     azureSubscription: 'Microsoft-Azure-0(66755cb4-1cef-48d9-8e8a-201e3147dbed)'
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(66755cb4-1cef-48d9-8e8a-201e3147dbed)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az deployment group create --resource-group $(resourceGroupName) \
+               --template-file $(templateFile) \
+               --parameters webAppName=$(webAppName)
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
